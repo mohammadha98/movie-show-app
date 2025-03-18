@@ -1,10 +1,12 @@
-// filepath: c:\Users\Mohammad\Documents\Sources\movie-show-app\movie-app\tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}",
+    "./src/**/*.{html,ts,scss}"
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: {
+   
+  }
 }
