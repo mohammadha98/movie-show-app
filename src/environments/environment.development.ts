@@ -7,7 +7,8 @@ export const environment = {
     },
     GOOGLE_AUTH:{
         CLIENT_ID:"646324157492-ou8i699134hf7t33th3gq219n4hk5nhl.apps.googleusercontent.com"
-    }
+    },
+    AUTH_TOKEN_KEY:"user-data"
 
 
 };
