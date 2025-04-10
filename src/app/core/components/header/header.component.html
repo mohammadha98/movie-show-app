@@ -2,7 +2,7 @@
   <!-- Left Side -->
   <div class="flex items-center">
     <!-- Logo -->
-    <img src="assets/images/netflix-logo.png" alt="netflix-logo" class="w-[110px]">
+    <img src="/images/netflix-logo.png" alt="netflix-logo" class="w-[110px]">
     
     <!-- Navigation Menu -->
     <nav class="ml-8 hidden md:block">
@@ -18,10 +18,10 @@
   <div class="flex items-center">
     <span class="text-neutral-200 text-sm mr-4">Welcome {{ username }}</span>
     <img [src]="userImg" alt="Profile" class="w-[42px] h-[42px] rounded-full object-cover mr-3">
-    <button 
+    <!-- <button 
       (click)="signOut()" 
-      class="text-neutral-200 text-sm hover:text-gray-400 transition-colors duration-300">
-      Signout
-    </button>
+      class="text-neutral-200 hover:text-gray-400 transition-colors duration-300">
+      <i class="fas fa-sign-out-alt"></i>
+    </button> -->
   </div>
 </header>

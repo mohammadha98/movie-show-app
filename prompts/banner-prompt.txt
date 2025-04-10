@@ -1,0 +1,17 @@
+Create a banner component with the following features:
+
+Background Video :
+An iframe covering the full width and height of the screen (w-full h-full absolute) with a dynamically bound src attribute ([src]="videoUrl") for embedding a YouTube video. The video should autoplay, be muted, loop, and have no controls. Use Angular's DomSanitizer to bypass security for the URL.
+Gradient Overlay :
+A semi-transparent gradient overlay (bg-gradient-to-r from-black) on top of the video, covering the entire screen (h-screen).
+Content :
+Centered text content with:
+A large bold title (text-6xl font-bold) dynamically bound to bannerTitle.
+A short description (text-xl w-1/4) dynamically bound to bannerOverview.
+Two buttons below the text:
+A 'Play' button (bg-white text-black) with a hover effect reducing opacity.
+A 'More Info' button (bg-gray-500 text-white bg-opacity-50).
+Styling :
+Use Tailwind CSS for styling. Ensure the layout is responsive and visually appealing.
+Dynamic Inputs :
+Accept bannerTitle, bannerOverview, and key (YouTube video ID) as inputs. Update the video URL dynamically when the key changes using Angular's ngOnChanges lifecycle hook.

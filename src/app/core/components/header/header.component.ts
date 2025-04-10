@@ -14,8 +14,15 @@ import { User } from '../../models/user.model';
 export class HeaderComponent {
   localStrService = inject(LocalStorageService);
 
-  username = (this.localStrService.getItem(environment.AUTH_TOKEN_KEY) as User)?.name || 'Guest';
-  userImg = (this.localStrService.getItem(environment.AUTH_TOKEN_KEY) as User)?.photoUrl || 'assets/images/default-avatar.png';
+  username:string = "";
+  userImg:string = "";
+
+
+  ngOnInit(){
+    this.username = (this.localStrService.getItem(environment.AUTH_TOKEN_KEY) as User)?.name || 'Guest';
+    this.userImg = (this.localStrService.getItem(environment.AUTH_TOKEN_KEY) as User)?.photoUrl
+  }
+
 
   navList = ["Home", "Tv Shows", "News & Popular", "My List", "Browse By Language"];
 
