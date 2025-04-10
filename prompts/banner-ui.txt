@@ -1,0 +1,11 @@
+Create a responsive header component with the following:
+
+Fixed position at the top (sticky top-0), height 68px, dark gray background (bg-gray-900), padding left/right 10px (px-10), and z-index: 10.
+Left Side :
+Logo image (width 110px, alt 'netflix-logo').
+Horizontal navigation menu (navList) with light gray text (text-neutral-200), small font size (text-sm), hover effect (hover:text-gray-400), and smooth transition.
+Right Side :
+Welcome message with dynamic username (Welcome {{username}}).
+Profile image (width 42px, dynamic source [src]="userImg").
+'Signout' link triggering auth.signOut().
+Use flexbox layout (justify-between, items-center) and Tailwind CSS. Include Angular syntax for dynamic data binding
