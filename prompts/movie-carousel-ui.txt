@@ -1,0 +1,20 @@
+Create a responsive UI template for a movie grid using HTML and Tailwind CSS. The design should include the following:
+
+Container :
+A container with horizontal padding of 20px (px-20) and vertical margins (mt-14 mb-20).
+Title :
+A title section at the top with bold font (font-semibold), size 2xl (text-2xl), and spacing (my-3 ml-3). Use placeholder text like 'Movie Grid' for the title.
+Movie Grid Layout :
+A grid layout containing multiple movie items. Each item should display:
+A movie poster image (use a placeholder image URL for src, e.g., https://via.placeholder.com/300x450) with a relative position.
+A hover overlay that appears on top of the image with:
+Movie title in bold (font-bold) and base size (text-base). Use placeholder text like 'Sample Movie Title'.
+A short description truncated to ~150 characters, styled with small text (text-xs) and spacing (my-3). Use placeholder text like 'This is a sample movie description...'.
+A footer section at the bottom of the item with:
+Vote average displayed in green (text-green-500). Use placeholder text like 'Vote Average: 8.5'.
+A chevron-down icon (use Font Awesome or similar).
+Styling :
+Ensure each movie item has relative positioning (relative) and the overlay has absolute positioning (absolute).
+Use Tailwind CSS for all styling, including flexbox for alignment and spacing.
+Hardcoded Data :
+Include hardcoded data directly in the HTML for one movie item (e.g., a sample movie title, description, vote average, and placeholder image URL). No dynamic bindings, Angular-specific logic, or carousel/swiper functionality is needed.

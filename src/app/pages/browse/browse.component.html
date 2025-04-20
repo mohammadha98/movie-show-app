@@ -1,6 +1,12 @@
 <app-header></app-header>
 <app-banner 
-  [bannerTitle]="bannerData.title"
-  [bannerOverview]="bannerData.overview"
-  [key]="bannerData.videoKey">
+  [bannerTitle]="(bannerDetail | async)?.title!"
+  [bannerOverview]="(bannerDetail | async)?.overview!"
+  [key]="(bannerVideo | async)[0].key">
 </app-banner>
+
+<app-movie-carousel [title]="'Trending Movies'" [movies]="trendingMovies"></app-movie-carousel>
+<app-movie-carousel [title]="'Popular Movies'" [movies]="popularMovies"></app-movie-carousel>
+<app-movie-carousel [title]="'Upcoming Movies'" [movies]="upcomingMovies"></app-movie-carousel>
+<app-movie-carousel [title]="'Now Playing'" [movies]="nowPlayingMovies"></app-movie-carousel>   
+<app-movie-carousel [title]="'Top Rated'" [movies]="topRatedMovies"></app-movie-carousel>

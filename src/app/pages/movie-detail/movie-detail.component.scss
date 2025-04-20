@@ -1,0 +1,66 @@
+// Netflix-style dark theme colors
+$netflix-black: #141414;
+$netflix-dark-gray: #181818;
+$netflix-red: #e50914;
+
+:host {
+  display: block;
+  background-color: $netflix-black;
+  min-height: 100vh;
+}
+
+// Enhanced card hover effects
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Gradient overlays
+.overlay-gradient {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+// Custom scrollbar for Netflix feel
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: $netflix-black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: #555;
+  }
+}
+
+// Cast section enhancements
+.cast-card {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Rating badge
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

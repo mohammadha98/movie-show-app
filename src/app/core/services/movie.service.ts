@@ -177,6 +177,16 @@ export class MovieService {
     );
   }
 
+  getBannerVideo(id:number){
+    return this.http.get<any>(
+        `${this.apiUrl}/movie/${id}/videos`,
+        { headers: this.headers }
+      ).pipe(
+        map(response => response.results),
+        catchError(this.handleError)
+      );
+  }
+
   // Get TV show videos
   getTVShowVideos(tvId: number): Observable<any[]> {
     return this.http.get<any>(
