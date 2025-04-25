@@ -276,6 +276,16 @@ export class MovieService {
     );
   }
 
+  // Get movie credits (cast and crew)
+  getMovieCredits(movieId: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.apiUrl}/movie/${movieId}/credits`,
+      { headers: this.headers }
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // Error handling
   private handleError(error: any) {
     console.error('API Error:', error);

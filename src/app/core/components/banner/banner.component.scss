@@ -2,17 +2,31 @@
   display: block;
 }
 
-iframe {
-  pointer-events: none;
-  transform: scale(1.5);
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
+iframe {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  
+  @media (min-width: 640px) {
+    width: 120%;
+    height: 120%;
   }
   
-  p {
-    width: 100%;
+  @media (min-width: 1024px) {
+    width: 150%;
+    height: 150%;
   }
 }
+
+// Responsive styles are now mostly handled by Tailwind classes in the HTML

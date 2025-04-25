@@ -1,0 +1,57 @@
+<div class="bg-gray-900 min-h-screen">
+  <!-- Loading State -->
+  <div *ngIf="loading" class="flex justify-center items-center min-h-screen">
+    <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-red-600"></div>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error" class="flex flex-col justify-center items-center min-h-screen text-white p-4">
+    <h1 class="text-3xl font-bold mb-4">Something went wrong</h1>
+    <p class="text-xl mb-6">{{ error }}</p>
+    <button 
+      (click)="ngOnInit()" 
+      class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+      Try Again
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!loading && !error" class="container mx-auto px-4 md:px-10 lg:px-20">
+    <!-- Title Section -->
+    <h1 class="font-semibold text-2xl py-4 text-white">{{ genreTitle }}</h1>
+    
+    <!-- Movie Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <!-- Movie Cards -->
+      <div *ngFor="let movie of movies" class="movie-card rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+        <!-- Poster Image -->
+        <div class="aspect-[2/3] overflow-hidden">
+          <img 
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
+            [alt]="movie.title"
+            class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Movie Info -->
+        <div class="p-3 bg-gray-800">
+          <h3 class="font-bold text-sm text-white truncate">{{ movie.title }}</h3>
+          <div class="flex items-center mt-1">
+            <span class="material-icons text-yellow-500 text-sm">star</span>
+            <span class="text-xs ml-1" [ngClass]="{'text-green-500': movie.vote_average >= 7, 'text-yellow-500': movie.vote_average >= 5 && movie.vote_average < 7, 'text-red-500': movie.vote_average < 5}">
+              {{ movie.vote_average.toFixed(1) }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- View More Button -->
+    <div class="flex justify-center py-8">
+      <button 
+        (click)="loadMore()" 
+        class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300">
+        Load More
+      </button>
+    </div>
+  </div>
+</div>

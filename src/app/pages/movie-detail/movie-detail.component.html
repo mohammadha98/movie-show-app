@@ -1,81 +1,91 @@
-<!-- Movie Banner Section -->
-<app-banner 
-  [bannerTitle]="movie.title" 
-  [bannerOverview]="movie.overview"
-  [key]="trailerKey">
-</app-banner>
+<!-- Loading State -->
+<div *ngIf="loading" class="flex justify-center items-center min-h-screen bg-gray-900">
+  <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-red-600"></div>
+</div>
 
-<!-- Movie Details Section -->
-<div class="bg-gray-900 text-white min-h-screen">
-  <div class="container mx-auto px-4 py-8">
-    
-    <!-- Main Info Section -->
-    <div class="flex flex-col md:flex-row gap-8 mb-12">
+<!-- Error State -->
+<div *ngIf="error" class="flex flex-col justify-center items-center min-h-screen bg-gray-900 text-white p-4">
+  <h1 class="text-3xl font-bold mb-4">Something went wrong</h1>
+  <p class="text-xl mb-6">{{ error }}</p>
+  <button 
+    (click)="ngOnInit()" 
+    class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+    Try Again
+  </button>
+</div>
+
+<!-- Movie Content -->
+<ng-container *ngIf="!loading && !error && movie">
+  <!-- Movie Banner Section -->
+  <app-banner 
+    [bannerTitle]="movie.title" 
+    [bannerOverview]="movie.overview"
+    [key]="trailerKey">
+  </app-banner>
+
+  <!-- Movie Details Section -->
+  <div class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
       
-      <!-- Movie Poster -->
-      <div class="w-full md:w-1/3 lg:w-1/4">
-        <div class="rounded-lg overflow-hidden shadow-lg hover-scale">
-          <img 
-            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
-            [alt]="movie.title"
-            class="w-full h-auto">
-        </div>
-      </div>
-      
-      <!-- Movie Info -->
-      <div class="w-full md:w-2/3 lg:w-3/4">
-        <h1 class="text-4xl font-bold mb-2">{{ movie.title }}</h1>
-        <div class="flex items-center text-sm text-gray-400 mb-4 flex-wrap gap-2">
-          <span>{{ getYear(movie.release_date) }}</span>
-          <span class="mx-2">•</span>
-          <span>{{ formatRuntime(movie.runtime) }}</span>
-          <span class="mx-2">•</span>
-          <span class="bg-gray-800 text-white px-2 py-1 rounded">{{ movie.vote_average.toFixed(1) }}</span>
+      <!-- Main Info Section -->
+      <div class="flex flex-col md:flex-row gap-8 mb-12">
+        
+        <!-- Movie Poster -->
+        <div class="w-full md:w-1/3 lg:w-1/4">
+          <div class="rounded-lg overflow-hidden shadow-lg hover-scale">
+            <img 
+              [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
+              [alt]="movie.title"
+              class="w-full h-auto">
+          </div>
         </div>
         
-        <!-- Genres -->
-        <div class="mb-6 flex flex-wrap gap-2">
-          <span 
-            *ngFor="let genre of movie.genres" 
-            class="bg-gray-800 text-sm text-gray-300 px-3 py-1 rounded-full">
-            {{ genre.name }}
-          </span>
-        </div>
-        
-        <!-- Tagline -->
-        <div *ngIf="movie.tagline" class="mb-4 italic text-gray-400">
-          "{{ movie.tagline }}"
-        </div>
-        
-        <!-- Overview -->
-        <div class="mb-8">
-          <h2 class="text-xl font-semibold mb-2">Overview</h2>
-          <p class="text-gray-300">{{ movie.overview }}</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Cast Section -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-red-600 pl-4">Cast</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <div *ngFor="let actor of castMembers" class="bg-gray-800 rounded-lg overflow-hidden hover-scale netflix-focus">
-          <img 
-            [src]="'https://image.tmdb.org/t/p/w185' + actor.profile_path" 
-            [alt]="actor.name"
-            class="w-full h-auto">
-          <div class="p-3">
-            <h3 class="font-medium text-white">{{ actor.name }}</h3>
-            <p class="text-sm text-gray-400">{{ actor.character }}</p>
+        <!-- Movie Info -->
+        <div class="w-full md:w-2/3 lg:w-3/4">
+          <h1 class="text-4xl font-bold mb-2">{{ movie.title }}</h1>
+          <div class="flex items-center text-sm text-gray-400 mb-4 flex-wrap gap-2">
+            <span>{{ getYear(movie.release_date) }}</span>
+            <span class="mx-2">•</span>
+            <span>{{ formatRuntime(movie.runtime) }}</span>
+            <span class="mx-2">•</span>
+            <span class="bg-gray-800 text-white px-2 py-1 rounded">{{ movie.vote_average.toFixed(1) }}</span>
+          </div>
+          
+          <!-- Genres -->
+          <div class="mb-6 flex flex-wrap gap-2">
+            <span 
+              *ngFor="let genre of movie.genres" 
+              class="bg-gray-800 text-sm text-gray-300 px-3 py-1 rounded-full">
+              {{ genre.name }}
+            </span>
+          </div>
+          
+          <!-- Tagline -->
+          <div *ngIf="movie.tagline" class="mb-4 italic text-gray-400">
+            "{{ movie.tagline }}"
+          </div>
+          
+          <!-- Overview -->
+          <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-2">Overview</h2>
+            <p class="text-gray-300">{{ movie.overview }}</p>
           </div>
         </div>
       </div>
+      
+      <!-- Cast Section - Replaced with Cast Carousel -->
+      <app-cast-carousel 
+        *ngIf="castMembers.length > 0"
+        [title]="'Cast'" 
+        [castMembers]="castMembers">
+      </app-cast-carousel>
+      
+      <!-- Similar Movies Section -->
+      <app-movie-carousel 
+        *ngIf="similarMovies.length > 0"
+        [title]="'More Like This'" 
+        [movies]="similarMovies">
+      </app-movie-carousel>
     </div>
-    
-    <!-- Similar Movies Section -->
-    <app-movie-carousel 
-      [title]="'More Like This'" 
-      [movies]="similarMovies">
-    </app-movie-carousel>
   </div>
-</div>
+</ng-container>

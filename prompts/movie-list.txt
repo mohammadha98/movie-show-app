@@ -1,0 +1,42 @@
+Create a responsive movie list component UI for a Netflix-like web application. The component should display a full list of movies in a specific genre using mock data. Below are the specific requirements:
+
+1. Container Layout :
+Use a container with horizontal padding (px-4 md:px-10 lg:px-20) and vertical spacing (mt-8 mb-12) to match the styling of your existing project.
+Add a title section at the top of the component:
+Title text: Use bold font (font-semibold), size text-2xl, and white color (text-white).
+Example title: Action Movies.
+2. Movie List Design :
+Display the movies in a grid layout with responsive columns:
+On small screens (mobile): 2 columns.
+On medium screens (tablet): 3 columns.
+On large screens (desktop): 4 columns.
+Each movie card should include the following elements:
+Poster Image :
+Use a placeholder image URL for the poster (e.g., https://via.placeholder.com/200x300).
+Ensure the image maintains its aspect ratio (aspect-ratio: 2/3) and fits within the card (object-fit: cover).
+Title :
+Display the movie title below the poster in bold (font-bold), small font size (text-sm), and white color (text-white).
+Example title: Sample Movie Title.
+Vote Average :
+Display the vote average below the title in green (text-green-500) and small font size (text-xs).
+Example vote average: Vote Average: 8.5.
+3. Card Styling :
+Each movie card should have rounded corners (rounded-lg) and a hover effect:
+Add a subtle shadow or scale-up effect on hover (hover:scale-105 transition-transform duration-300).
+Ensure the cards are spaced evenly with consistent gaps between them (gap-4).
+4. Responsive Design :
+Use Tailwind CSS utilities to ensure the layout adjusts seamlessly across different screen sizes.
+Test the design on various devices to ensure no content overflows or becomes unreadable.
+5. Mock Data :
+Include hardcoded mock data for 10 sample movies directly in the HTML. Each movie should have:
+A placeholder image URL.
+A sample title.
+A sample vote average.
+6. Consistency with Existing Design :
+Ensure the movie list component matches the visual style of your existing project:
+Use the same dark theme (bg-gray-900) and typography.
+Reuse hover effects, transitions, and spacing from your existing components.
+7. Optional Enhancements :
+Add a "View More" button at the bottom of the list to indicate that more movies can be loaded. Style it with a red background (bg-red-600), white text (text-white), and rounded corners (rounded-lg).
+Example button text: View More.
+Provide the complete HTML and CSS code for the movie list component using Tailwind CSS. Ensure the final design is clean, visually appealing, and fully responsive across all devices

@@ -1,0 +1,27 @@
+Optimize the provided Netflix-style banner component to ensure it is fully responsive and works seamlessly across different screen sizes. Below are the specific issues to address and the desired improvements:
+
+1. Responsive Video Scaling :
+Replace the fixed transform: scale(1.5) on the iframe with a dynamic solution that ensures the video scales proportionally without cropping or overflowing on smaller screens.
+Ensure the video maintains its aspect ratio and fits within the container on all devices.
+2. Text Responsiveness :
+Adjust the h1 and p elements to dynamically resize based on screen width:
+Use Tailwind's responsive utilities (e.g., text-4xl md:text-6xl) to scale the title (h1) and description (p) appropriately.
+Ensure the p element does not overflow by wrapping text properly and adjusting its width dynamically (w-full on small screens).
+Add line-clamp functionality to the p element to truncate long descriptions gracefully on smaller screens.
+3. Button Layout Optimization :
+Ensure the buttons (Play and More Info) remain horizontally aligned on larger screens but stack vertically on smaller screens without overlapping or looking cramped.
+Use Tailwind's flex-col and gap-4 utilities to handle button stacking on small screens.
+4. Gradient Overlay :
+Modify the gradient overlay (bg-gradient-to-r from-black to-transparent) to adapt to smaller screens:
+Consider using a vertical gradient (bg-gradient-to-b) on small screens to ensure better readability of the text.
+5. Dynamic Height :
+Replace the fixed height (h-[70vh]) with a dynamic solution that adjusts based on screen size:
+Use min-h-[70vh] or h-auto to allow the banner to shrink on smaller screens while maintaining its proportions.
+6. Pointer Events :
+If the iframe is intentionally non-interactive (pointer-events: none), add a visual cue (e.g., a play icon or overlay) to indicate that the video is purely decorative.
+Alternatively, make the video interactive by enabling pointer-events and ensuring proper controls are available.
+7. General Responsive Design :
+Ensure the entire banner layout adjusts gracefully on smaller screens:
+Use Tailwind's responsive breakpoints (sm:, md:, lg:) to fine-tune the design for different screen sizes.
+Test the layout on various devices to ensure no content overflows or becomes unreadable.
+Provide the complete HTML and CSS code for the optimized banner using Tailwind CSS. Ensure the final design is clean, visually appealing, and fully responsive across all devices

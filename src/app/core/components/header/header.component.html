@@ -7,8 +7,9 @@
     <!-- Navigation Menu -->
     <nav class="ml-8 hidden md:block">
       <ul class="flex space-x-6">
-        <li *ngFor="let item of navList" class="text-neutral-200 text-sm hover:text-gray-400 transition-colors duration-300 cursor-pointer">
-          {{ item }}
+        <li *ngFor="let item of navList" class="text-neutral-200 text-sm hover:text-gray-400 transition-colors duration-300 cursor-pointer" [routerLink]="item.link">
+          
+          {{ item.title }}
         </li>
       </ul>
     </nav>

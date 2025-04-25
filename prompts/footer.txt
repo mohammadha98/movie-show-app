@@ -1,0 +1,31 @@
+Create a responsive footer component for a Netflix-like web application using Tailwind CSS. The footer should be visually consistent with the provided header design, which has a dark theme (bg-gray-900), clean typography, and smooth transitions. Ensure the footer complements the header in terms of style, spacing, and usability. Below are the specific requirements:
+
+1. Styling and Layout :
+The footer should have a fixed height of 68px (matching the header) and use the same dark background color (bg-gray-900) for consistency.
+Add padding on the left and right sides (px-10) to match the header's layout.
+Use a flexbox layout (flex) with space distributed evenly between the left and right sections (justify-between).
+Align all items vertically (items-center).
+2. Left Side Content :
+Include a copyright notice on the left side of the footer. Use small text (text-sm) with a neutral gray color (text-neutral-200).
+Example text: © 2023 Netflix Clone. All rights reserved.
+3. Right Side Content :
+On the right side, include a horizontal list of links for additional navigation or legal information. These links should match the style of the header's navigation menu:
+Text color: light gray (text-neutral-200).
+Font size: small (text-sm).
+Hover effect: change text color to a lighter gray (hover:text-gray-400) with a smooth transition (transition-colors duration-300).
+Spacing: Add spacing between the links (space-x-6).
+Example links:
+Terms of Use
+Privacy Policy
+Contact Us
+4. Responsive Design :
+Ensure the footer is responsive and adjusts well on smaller screens:
+On smaller screens, stack the content vertically instead of horizontally.
+Use Tailwind's responsive utilities (e.g., md:flex-row, flex-col) to handle this behavior.
+5. Compatibility with Header :
+The footer should feel like a natural extension of the header, maintaining the same visual language, spacing, and interactive elements.
+Use the same font sizes, colors, and hover effects as the header for consistency.
+6. Additional Notes :
+Avoid including any dynamic data binding or Angular-specific syntax (e.g., {{ }} or [src]). Instead, use static text and placeholder links.
+Focus solely on the UI design and styling, ensuring it matches the dark, minimalist aesthetic of the header.
+Provide the complete HTML code for the footer using Tailwind CSS, ensuring it integrates seamlessly with the provided header.

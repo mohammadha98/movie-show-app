@@ -10,7 +10,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-browse',
   standalone: true,
-  imports: [HeaderComponent, BannerComponent, MovieCarouselComponent,AsyncPipe],
+  imports: [ BannerComponent, MovieCarouselComponent,AsyncPipe],
   templateUrl: './browse.component.html',
   styleUrl: './browse.component.scss'
 })

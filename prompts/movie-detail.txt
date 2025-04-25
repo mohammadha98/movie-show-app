@@ -1,0 +1,26 @@
+Please help me create an Angular component using Tailwind CSS that displays detailed information for a movie, similar to Netflix's interface. I need:
+
+1. A "MovieDetailComponent" that shows a single movie's information
+2. Use reusable "BannerComponent" that displays the movie's hero image and primary details
+3. A section below the banner showing additional movie information
+
+Requirements:
+- Use Angular 17+ and Tailwind CSS
+- Focus only on the UI implementation (no services or data fetching logic)
+- The design should be responsive and follow Netflix's aesthetic
+- dark theme with appropriate contrast
+
+The component should display:
+- Movie title, release year, rating, duration
+- Genre tags
+- Brief synopsis/description
+- Cast information
+- Similar movie recommendations
+
+Please provide the complete component code including:
+- Component TypeScript file
+- HTML template with Tailwind classes
+- Any necessary SCSS (though prefer Tailwind utilities)
+- Example of how to use the component in a parent component
+
+Please explain any complex Tailwind utility combinations you use.

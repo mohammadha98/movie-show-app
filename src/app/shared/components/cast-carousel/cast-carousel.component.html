@@ -1,0 +1,39 @@
+<div class="cast-carousel-container px-4 md:px-10 lg:px-20 mt-8 mb-12">
+  <!-- Title Section -->
+  <h2 class="font-semibold text-2xl my-3 ml-3 text-white">{{ title }}</h2>
+
+  <!-- Swiper Container -->
+  <div class="relative">
+    <div #swiperContainer class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Cast Member Items -->
+        <div class="swiper-slide" *ngFor="let actor of castMembers">
+          <div class="cast-card relative rounded-lg overflow-hidden group cursor-pointer">
+            <!-- Actor Image -->
+            <img [src]="'https://image.tmdb.org/t/p/w185' + actor.profile_path"
+              [alt]="actor.name"
+              class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+
+            <!-- Hover Overlay -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+              <div>
+                <h3 class="font-bold text-base text-white">{{ actor.name }}</h3>
+                <p class="text-xs text-gray-300 mt-1">
+                  {{ actor.character }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>

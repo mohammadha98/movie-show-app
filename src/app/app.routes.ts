@@ -10,4 +10,7 @@ export const routes: Routes = [
     {
         path: "movie/:id", loadComponent: () => import('./pages/movie-detail/movie-detail.component')
     },
+     {
+         path:"movie-list/:genre", loadComponent: () => import('./pages/movie-list/movie-list.component')
+     }
 ];
